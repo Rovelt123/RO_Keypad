@@ -19,13 +19,11 @@ function ShowKeypad(pin) {
 	if (isChangingCode == 2) {
 		if (lengthCode == 3) {
 			if (!confirmCode) {
-				// First time entering new code
 				confirmCode = enterCode;
 				enterCode = "";
 				$("#fields .numberfield").removeClass("active");
 				$("#anleitung p").html("<strong>Confirm the new PIN-Code.</strong>");
 			} else if (enterCode === confirmCode) {
-				// New code confirmed
 				$("#fields .numberfield").addClass("right");
 				$("#numbers").addClass("hide");
 				$("#anleitung p").html("New PIN-Code set!");
@@ -46,7 +44,6 @@ function ShowKeypad(pin) {
 	} else if (isChangingCode == 3) {
 		if (lengthCode == 3) {
 			if (enterCode == pin) {
-				// Correct old code, start changing code
 				isChangingCode = 2;
 				enterCode = "";
 				$("#fields .numberfield").removeClass("active");
